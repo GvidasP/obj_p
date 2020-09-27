@@ -1,0 +1,4 @@
+﻿  obj_programavimas.cpp
+C:\Users\gvida\source\repos\obj_programavimas\obj_programavimas\obj_programavimas.cpp(52,58): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\gvida\source\repos\obj_programavimas\obj_programavimas\obj_programavimas.cpp(58,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  obj_programavimas.vcxproj -> C:\Users\gvida\source\repos\obj_programavimas\Debug\obj_programavimas.exe
