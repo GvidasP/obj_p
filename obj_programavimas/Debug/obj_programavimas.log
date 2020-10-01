@@ -1,4 +1,5 @@
 ﻿  obj_programavimas.cpp
 C:\Users\gvida\source\repos\obj_programavimas\obj_programavimas\obj_programavimas.cpp(100,66): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\gvida\source\repos\obj_programavimas\obj_programavimas\obj_programavimas.cpp(105,50): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\gvida\source\repos\obj_programavimas\obj_programavimas\obj_programavimas.cpp(101,50): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\gvida\source\repos\obj_programavimas\obj_programavimas\obj_programavimas.cpp(73,9): warning C4101: 'avg': unreferenced local variable
   obj_programavimas.vcxproj -> C:\Users\gvida\source\repos\obj_programavimas\Debug\obj_programavimas.exe

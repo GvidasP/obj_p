@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 
 using std::cin;
 using std::cout;
@@ -13,7 +14,8 @@ struct Student {
     string surname;
     std::vector<int> marks;
     int exam;
-    float final_mark;
+    float final_mark_avg;
+    float final_mark_med;
 };
 
 int median(std::vector<int> data) {
@@ -59,6 +61,10 @@ std::vector<Student> readFile() {
     return students;
 }
 
+bool compareString(Student &a, Student &b) {
+    return a.name < b.name;
+}
+
 
 int main()
 {
@@ -73,9 +79,6 @@ int main()
 
     cout << "Iveskite egzamino pazymi: ";
     cin >> student.exam;
-
-    cout << "Isvesti vidurki ar mediana? (1/2)";
-    cin >> avg;
     
     cout << "Iveskite pazymius: \n";
     while (cin >> n)
@@ -83,12 +86,10 @@ int main()
 
     students.push_back(student);
 
-    if (avg == 1) {
-        cout << "Vardas Pavarde Galutinis (Vid.)" << std::endl;
-    }
-    else {
-        cout << "Vardas Pavarde Galutinis (Med.)" << std::endl;
-    }
+    std::sort(students.begin(), students.end(), compareString);
+
+    cout << std::setw(15) << "Pavarde" << std::setw(15) << "Vardas" << std::setw(20) << "Galutinis (Vid.)" << std::setw(20) << "Galutinis (Med.)" << std::endl;
+    cout << std::setfill('-') << std::setw(80) << "-" << std::setfill(' ') << std::endl;
 
     for (auto& s : students) {
         int sum_of_marks{};
@@ -96,14 +97,10 @@ int main()
         for (auto& i : s.marks)
             sum_of_marks += i;
 
-        if (avg == 1) {
-            s.final_mark = 0.4 * (sum_of_marks / s.marks.size()) + 0.6 * s.exam;
-            cout << s.name << " " << s.surname << " " << s.final_mark << std::endl;
-        }
+        s.final_mark_avg = 0.4 * (sum_of_marks / s.marks.size()) + 0.6 * s.exam;
+        s.final_mark_med = 0.4 * median(s.marks) + 0.6 * s.exam;
 
-        else {
-            s.final_mark = 0.4 * median(s.marks) + 0.6 * s.exam;
-            cout << s.name << " " << s.surname << " " << s.final_mark << std::endl;
-        }
+        cout << std::setw(15) << s.surname << std::setw(15) << s.name << std::setw(15) << s.final_mark_avg << std::setw(15) << s.final_mark_med << std::endl;
+
     }
 }
