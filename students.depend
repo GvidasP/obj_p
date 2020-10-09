@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1602235857 source:c:\users\gvida\desktop\studies\students\main.cpp
+	<iostream>
+	<vector>
+	<iomanip>
+	<algorithm>
+	"student.h"
+	"helper.h"
+
+1602233669 c:\users\gvida\desktop\studies\students\student.h
+	<string>
+	<vector>
+
+1602233806 c:\users\gvida\desktop\studies\students\helper.h
+	"student.h"
+	<vector>
+
+1602233717 source:c:\users\gvida\desktop\studies\students\student.cpp
+	"student.h"
+
+1602240017 source:c:\users\gvida\desktop\studies\students\helper.cpp
+	"helper.h"
+	"student.h"
+	<vector>
+	<algorithm>
+	<fstream>
+	<sstream>
+	<string>
+	<iostream>
+	<iterator>
+
