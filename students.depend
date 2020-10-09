@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1602235857 source:c:\users\gvida\desktop\studies\students\main.cpp
+1602244393 source:c:\users\gvida\desktop\studies\students\main.cpp
 	<iostream>
 	<vector>
 	<iomanip>
 	<algorithm>
 	"student.h"
 	"helper.h"
+	"generator.h"
 
 1602233669 c:\users\gvida\desktop\studies\students\student.h
 	<string>
@@ -18,7 +19,7 @@
 1602233717 source:c:\users\gvida\desktop\studies\students\student.cpp
 	"student.h"
 
-1602240017 source:c:\users\gvida\desktop\studies\students\helper.cpp
+1602240633 source:c:\users\gvida\desktop\studies\students\helper.cpp
 	"helper.h"
 	"student.h"
 	<vector>
@@ -28,4 +29,16 @@
 	<string>
 	<iostream>
 	<iterator>
+
+1602244208 source:c:\users\gvida\desktop\studies\students\generator.cpp
+	"student.h"
+	"helper.h"
+	<iostream>
+	<vector>
+	<fstream>
+	<random>
+	<algorithm>
+	<iomanip>
+
+1602244407 c:\users\gvida\desktop\studies\students\generator.h
 

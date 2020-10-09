@@ -5,12 +5,19 @@
 
 #include "student.h"
 #include "helper.h"
+#include "generator.h"
 
 using std::cin;
 using std::cout;
 
 int main()
 {
+    int m;
+    cout << "Kiek studentu sugeneruoti?";
+    cin >> m;
+
+    writeStudents(m);
+
     std::vector<Student> students = readFile();
 
     int n;
