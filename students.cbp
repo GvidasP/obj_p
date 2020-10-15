@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="generator.cpp" />
+		<Unit filename="generator.h" />
 		<Unit filename="helper.cpp" />
 		<Unit filename="helper.h" />
 		<Unit filename="kursiokai.txt" />

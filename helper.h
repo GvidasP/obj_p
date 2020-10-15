@@ -4,7 +4,7 @@
 #include "student.h"
 #include <vector>
 
-int median(std::vector<int> data);
+int median(const std::vector<int> & numbers);
 
 bool compareString(Student &a, Student &b);
 

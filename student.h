@@ -12,6 +12,8 @@ struct Student
     int exam;
     float final_mark_avg;
     float final_mark_med;
+    std::string category;
+    bool file;
 };
 
 #endif
