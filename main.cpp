@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <list>
 #include <iomanip>
 #include <algorithm>
 
@@ -12,15 +13,17 @@ using std::cout;
 
 int main()
 {
-    int m;
+    /*int m;
     cout << "Kiek studentu sugeneruoti?";
     cin >> m;
 
-    writeStudents(m);
+    writeStudents(m);*/
 
-    std::vector<Student> students = readFile();
+    std::list<Student> students = readFile();
 
-    int n;
+    sortStudents(students);
+
+    /*int n;
 
     Student student;
 
@@ -52,5 +55,5 @@ int main()
         s.final_mark_med = 0.4 * median(s.marks) + 0.6 * s.exam;
 
         cout << std::setw(15) << s.surname << std::setw(15) << s.name << std::setw(15) << s.final_mark_avg << std::setw(15) << s.final_mark_med << std::endl;
-    }
+    }*/
 }
