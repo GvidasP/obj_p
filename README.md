@@ -59,3 +59,24 @@
 **CPU**: Intel Core i7-8565U
 **RAM**: 16.0GB
 **SDD**: 476GB Western Digital WDC PC SN720 SDAPNTW-512G-1006
+
+## v1.0 palyginimai
+
+**Naudota strategija:** Studentų struktūroje kintamasis `category`, kuris nusprendžia, kuriai kategorijai priklauso studentas. Todėl atliksiu palyginimą su 1) ir 2) strategijomis, aprašytomis užduotyje, naudodamas **studentai1000000.txt** failą.
+
+## Esama strategija
+
+`Studentu rusiavimas i 2 kategorijas uztruko: 0.039285`, naudojant `list` konteinerį.
+`Studentu rusiavimas i 2 kategorijas uztruko: 0.0179453`, naudojant `vector` konteinerį.
+
+## 1 strategija
+
+Naudojamas **partition_copy** algoritmas studentus išskaidyti į 2 grupes
+`Studentu rusiavimas i 2 kategorijas uztruko: 0.43925`, naudojant `vector` konteinerį
+`Studentu rusiavimas i 2 kategorijas uztruko: 0.454077`, naudojant `list` konteinerį
+
+## 2 strategija
+
+Naudojamas **remove_copy_if** algoritmas. Studentai iš vieno konteinerio perkeliami į kitą ir ištrinami iš esamo.
+`Studentu rusiavimas i 2 kategorijas uztruko: 0.185952`, naudojant `vector` konteinerį
+`Studentu rusiavimas i 2 kategorijas uztruko: 0.18629`, naudojant `list` konteinerį
