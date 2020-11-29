@@ -2,6 +2,7 @@
 #include "student.h"
 
 #include <vector>
+#include <list>
 #include <algorithm>
 #include <fstream>
 #include <sstream>
@@ -25,18 +26,36 @@ bool compareString(Student &a, Student &b)
     return a.name < b.name;
 }
 
-std::vector<Student> readFile()
+std::list<Student> sortStudents(std::list<Student> students) {
+    auto start = std::chrono::steady_clock::now();
+
+    std::list<Student> vargsiukai;
+
+    // std::partition_copy(students.begin(), students.end(), vargsiukai.begin(), kietekai.begin(), [](Student s){return s.final_mark_avg < 5;});
+
+    //std::partition_copy(begin(students), end(students), back_inserter(vargsiukai), back_inserter(kietekai), [](Student s){ return s.final_mark_avg < 5; });
+
+    std::remove_copy_if(begin(students), end(students), back_inserter(vargsiukai), [](Student s){ return s.final_mark_avg < 5; });
+
+    auto end = std::chrono::steady_clock::now();
+    std::chrono::duration<double> elapsed_seconds = end - start;
+    std::cout << "Studentu rusiavimas i 2 kategorijas uztruko: " << elapsed_seconds.count() << "\n";
+
+    return vargsiukai;
+}
+
+std::list<Student> readFile()
 {
     try
     {
         auto start = std::chrono::steady_clock::now();
 
-        std::ifstream ifs("kursiokai.txt");
+        std::ifstream ifs("studentai1000000.txt");
         if (!ifs.is_open())
         {
             throw ("Failas neegzistuoja.");
         }
-        std::vector<Student> students;
+        std::list<Student> students;
         std::string line;
 
         std::getline(ifs, line);
@@ -52,10 +71,10 @@ std::vector<Student> readFile()
             stu.name = tokens[0];
             stu.surname = tokens[1];
 
-            if(tokens.size() < 13)
+            if(tokens.size() < 10)
                 throw "Masyvas per trumpas.";
 
-            for (int i = 0; i < 14; i++)
+            for (int i = 0; i < 7; i++)
             {
                 stu.marks.push_back(stoi(tokens[temp]));
                 temp++;
