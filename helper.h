@@ -11,6 +11,6 @@ bool compareString(Student &a, Student &b);
 
 std::list<Student> readFile();
 
-void sortStudents(std::list<Student> students);
+std::list<Student> sortStudents(std::list<Student> students);
 
 #endif

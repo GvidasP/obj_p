@@ -26,20 +26,22 @@ bool compareString(Student &a, Student &b)
     return a.name < b.name;
 }
 
-void sortStudents(std::list<Student> students) {
+std::list<Student> sortStudents(std::list<Student> students) {
     auto start = std::chrono::steady_clock::now();
 
-    for(Student& s: students){
-        if(s.final_mark_avg < 5) {
-            s.category = "vargsiukas";
-        } else {
-            s.category = "kietekas";
-        }
-    }
+    std::list<Student> vargsiukai;
+
+    // std::partition_copy(students.begin(), students.end(), vargsiukai.begin(), kietekai.begin(), [](Student s){return s.final_mark_avg < 5;});
+
+    //std::partition_copy(begin(students), end(students), back_inserter(vargsiukai), back_inserter(kietekai), [](Student s){ return s.final_mark_avg < 5; });
+
+    std::remove_copy_if(begin(students), end(students), back_inserter(vargsiukai), [](Student s){ return s.final_mark_avg < 5; });
 
     auto end = std::chrono::steady_clock::now();
     std::chrono::duration<double> elapsed_seconds = end - start;
     std::cout << "Studentu rusiavimas i 2 kategorijas uztruko: " << elapsed_seconds.count() << "\n";
+
+    return vargsiukai;
 }
 
 std::list<Student> readFile()
@@ -48,7 +50,7 @@ std::list<Student> readFile()
     {
         auto start = std::chrono::steady_clock::now();
 
-        std::ifstream ifs("studentai10000000.txt");
+        std::ifstream ifs("studentai1000000.txt");
         if (!ifs.is_open())
         {
             throw ("Failas neegzistuoja.");
